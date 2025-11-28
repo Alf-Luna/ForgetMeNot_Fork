@@ -36,7 +36,7 @@ class UserRepository (
             val user = userService.getUserByEmail(email)
             if (user.email == email) {
                 return Result.failure(IllegalArgumentException("Correo en uso"))
-            } else{
+            } else {
                 userService.addUser(UserDto(0, name, email, pass))
                 return Result.success(1)
             }
